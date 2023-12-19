@@ -1,4 +1,4 @@
-@EC2 
+# EC2 
     EC2 means Elastic cloud compute. The EC2 is one of the most widely used and one of the most popular services that AWS provide. And AWS is follows the PAY-AS-YOU-GO.
     The compute means that you are requesting AWS to provide you a compute instance which is a combination of cpu ram and disk like a virtual server. And the cloud means provide virtual machine instance. 
 
