@@ -23,3 +23,21 @@
 
    5.Accelerated computing
        Accelerated Computing Instances typically come with one or more types of accelerators, such as Graphics Processing Units (GPUs),Field Programmable Gate Arrays (FPGAs), or custom Application Specific Integrated Circuits (ASICs). These accelerators offload computationally intensive tasks from the main CPU, enabling faster and more efficient processing for specific workloads.
+
+Steps to create the instance:
+         name the instances 
+                |
+        choose the operating system 
+                |
+        choose instance type 
+                |
+        create key pair 
+                |
+        network settings 
+                |
+        configure the storage 
+                |
+        lanuch instance.
+
+If we want to open the instance in the windows then install mobile exterm in the windows
+After install it open the mobile exterm 
