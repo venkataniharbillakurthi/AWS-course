@@ -39,5 +39,19 @@ Steps to create the instance:
                 |
         lanuch instance.
 
-If we want to open the instance in the windows then install mobile exterm in the windows
-After install it open the mobile exterm 
+If we want to open the instance in the windows then install mobaxterm in the windows
+After install it open the mobaxterm 
+
+step1:open the mobaxterm and enter the command " ssh -i keyfilename.pem os(type)@privateIP of the EC2 "
+
+step2: command " <chmod680 keyfilename.pem " and Now, deploy the jenkin into the ubuntu(OStype).
+
+step3: Go to jenkin officals page goto unbuntu and install openjdk-11-jdk in mobaxterm.
+
+step4: copy the code from the jenkin offically page(weekly release).
+
+step5: command " systemCtl status jenkins " and copy the public ip address of EC2.
+
+step6: open the browser and enter the " http:publicip:8080 "
+
+step7: And go to mobaxterm means ubuntu and enter the command " cat/var/lib/jenkins/secrets/initalAdminPassword " and then copy the key and enter in the browser.
