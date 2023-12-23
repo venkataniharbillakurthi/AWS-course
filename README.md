@@ -139,3 +139,77 @@ VPN connections: Connect your VPCs to your on-premises networks using AWS Virtua
 VPC with servers in private subnets and NAT
 
 ![image](https://github.com/venkataniharbillakurthi/AWS-course/assets/84034294/8fd3a83e-b435-4cfb-b421-7303efc3c963)
+
+
+
+
+
+
+# AWS Security using Security Groups and NACL
+
+AWS (Amazon Web Services) provides multiple layers of security to protect resources and data within its cloud infrastructure. Two important components for network security in AWS are Security Groups and Network Access Control Lists (NACLs).
+Let's explore how each of them works:
+
+Security Groups:
+    Security Groups act as virtual firewalls for Amazon EC2 instances (virtual servers) at the instance level. They control 
+inbound and outbound traffic by allowing or denying specific protocols, ports, and IP addresses.
+    Each EC2 instance can be associated with one or more security groups, and each security group consists of inbound and outbound rules.
+    Inbound rules determine the traffic that is allowed to reach the EC2 instance, whereas outbound rules control the traffic leaving the instance.
+    Security Groups can be configured using IP addresses, CIDR blocks, security group IDs, or DNS names to specify the source or destination of the traffic.
+    They operate at the instance level and evaluate the rules before allowing traffic to reach the instance.
+    Security Groups are stateful, meaning that if an inbound rule allows traffic, the corresponding outbound traffic is automatically allowed, and vice versa.
+    Changes made to security group rules take effect immediately.
+
+Network Access Control Lists (NACLs):
+    NACLs are an additional layer of security that operates at the subnet level. They act as stateless traffic filters for inbound and outbound traffic at the subnet boundary.
+    Unlike Security Groups, NACLs are associated with subnets, and each subnet can have only one NACL. However, multiple subnets can share the same NACL.
+    NACLs consist of a numbered list of rules (numbered in ascending order) that are evaluated in order from lowest to highest.
+    Each rule in the NACL includes a rule number, protocol, rule action (allow or deny), source or destination IP address range, port range, and ICMP (Internet Control Message Protocol) type.
+    NACL rules can be configured to allow or deny specific types of traffic based on the defined criteria.
+    They are stateless, which means that if an inbound rule allows traffic, the corresponding outbound traffic must be explicitly allowed using a separate outbound rule.
+    Changes made to NACL rules may take some time to propagate to all the resources using the associated subnet.
+
+![image](https://github.com/venkataniharbillakurthi/AWS-course/assets/84034294/fe79d330-6a5a-41b2-9621-54fbc76cde4b)
+
+# now create the VPC
+
+step1: click on the vpc and more, and name it and check the ip address also if it is 16 then 65556 IPs or if 24 then 256.
+<img width="956" alt="image" src="https://github.com/venkataniharbillakurthi/AWS-course/assets/84034294/13176cc7-ded7-4f06-872f-0f251a6070af">
+
+step2: choose the availability and click on create.
+<img width="960" alt="image" src="https://github.com/venkataniharbillakurthi/AWS-course/assets/84034294/f798dd51-2830-43f9-a265-d9cb4844ef55">
+
+
+NOW, place EC2 in the VPC and deploy a python web application on it.
+
+first, create the EC2 instance but while create the EC2 instance choose the your VPC that we created not choose the default and choose the public subnet also.and make enable the ip adress.
+<img width="958" alt="image" src="https://github.com/venkataniharbillakurthi/AWS-course/assets/84034294/c4290c86-3658-42bf-8c97-98e85e1362d4">
+
+secound thing open the mobaxterm and do this.
+<img width="960" alt="image" src="https://github.com/venkataniharbillakurthi/AWS-course/assets/84034294/59e36b50-d91f-44d0-8b73-ebe696505bbb">
+
+And then now, deploy the python on it.run the command "python3"
+<img width="879" alt="image" src="https://github.com/venkataniharbillakurthi/AWS-course/assets/84034294/d7677c2e-be1e-45a9-bd76-a035b269a28b">
+
+and then, "python3 -m http.server 8000"
+<img width="395" alt="image" src="https://github.com/venkataniharbillakurthi/AWS-course/assets/84034294/ccafe300-8a75-4f1d-bf09-516ad5f50e4f">
+
+after then open website with http:publicadress:8000 but it showing error.
+<img width="960" alt="image" src="https://github.com/venkataniharbillakurthi/AWS-course/assets/84034294/67d3302c-3701-49c6-be7a-48cc5d506489">
+
+so now open the security group on AWS. and click on edit on inbound rule.
+<img width="953" alt="image" src="https://github.com/venkataniharbillakurthi/AWS-course/assets/84034294/4ad0505f-b486-42f2-89ec-a5ced5066cd6">
+
+then 8000 is added successfuly.
+<img width="955" alt="image" src="https://github.com/venkataniharbillakurthi/AWS-course/assets/84034294/3fcd9533-de8e-42b4-9c85-c508b3a1a0d6">
+
+now we can edit the NACL so if we requried.
+<img width="960" alt="image" src="https://github.com/venkataniharbillakurthi/AWS-course/assets/84034294/f788a9be-6f9f-4459-9280-b8551f4e34c3">
+
+then finally the website is running.
+<img width="960" alt="image" src="https://github.com/venkataniharbillakurthi/AWS-course/assets/84034294/70d2b75d-61ea-4630-b0dd-278a7484dcc6">
+
+
+
+
+
