@@ -171,6 +171,10 @@ Network Access Control Lists (NACLs):
 
 ![image](https://github.com/venkataniharbillakurthi/AWS-course/assets/84034294/fe79d330-6a5a-41b2-9621-54fbc76cde4b)
 
+
+# AWS Route 53
+Project: Configure and manage a domain name using Route 53. You'll register a domain, set up DNS records, and explore advanced features such as health checks, routing policies, and DNS-based failover.
+
 # now create the VPC
 
 step1: click on the vpc and more, and name it and check the ip address also if it is 16 then 65556 IPs or if 24 then 256.
